@@ -1,26 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useState } from 'react'
+import './App.css'
+import { NavBar } from './components/core/Navbar'
+import { Page } from './types/page'
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [arraySize, setArraySize] = useState<number>(10)
+    const [page, setPage] = useState<Page>('home')
+
+    useEffect(() => {
+        console.log('array size mudou ', arraySize)
+    }, [arraySize])
+
+    return (
+        <>
+            <NavBar 
+                setArraySize={setArraySize}
+                setPage={setPage}
+            />
+
+            { page === 'home' && (
+                <div>home</div>
+            )}
+            { page === 'bubble' && (
+                <div>bubble</div>
+            )}
+            { page === 'shell' && (
+                <div>shell</div>
+            )}
+        </>
+    );
 }
 
 export default App;
