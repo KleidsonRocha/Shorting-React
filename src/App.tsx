@@ -24,7 +24,6 @@ function App() {
             />
 
             { page === 'home' && (
-<<<<<<< HEAD
                 <>
                     <Grid container spacing={2}>
                         <Grid item xs={8}>
@@ -40,20 +39,6 @@ function App() {
                     </Grid>
                     <Footer />
                 </>
-=======
-                <Grid container spacing={2}>
-                    <Grid item xs={8}>
-                        <h1>Escolha do Assunto</h1>
-                       <text>kleidson</text>
-                    </Grid>
-                    <Grid alignItems="flex-start" item xs={4}>
-                        <h1>Participantes</h1>
-                        <text>Kleidson (Progamacaoo e Pesquisa)</text><br />
-                        <text>Matheus (Pesquisa)</text><br />
-                        <text>Luis (Design)</text><br />
-                    </Grid>
-                </Grid>
->>>>>>> 73743d56e413f72cb96375dddd99e3696b6af1be
             )}
             { page === 'bubble' && (
                 <>
