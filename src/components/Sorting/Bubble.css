@@ -1,0 +1,28 @@
+/* Bubble.css */
+
+.bar-container {
+    display: flex;
+    align-items: flex-end;
+    height: 200px;
+}
+
+.bar {
+    width: 20em;
+    background-color: blue;
+    margin: 0 5px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.bar-number {
+    color: white;
+    position: absolute;
+    bottom: 2px; /* Ajuste a posição vertical conforme necessário */
+    width: 100%; /* Ocupar a largura da barra */
+    text-align: center;
+}
+
+.bar.sorting {
+    background-color: #002884; /* Cor de destaque para a barra sendo ordenada */
+}

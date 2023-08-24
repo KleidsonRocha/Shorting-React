@@ -61,7 +61,7 @@ export const NavBar = ({
                     >
                         <MenuItem onClick={() => handleClose(5)}>Tamanho de array 5</MenuItem>
                         <MenuItem onClick={() => handleClose(10)}>Tamanho de array 10</MenuItem>
-                        <MenuItem onClick={() => handleClose(15)}>Tamanho de array 15</MenuItem>
+                        <MenuItem onClick={() => handleClose(50)}>Tamanho de array 15</MenuItem>
                     </Menu>
                 </Stack>
             </Toolbar>

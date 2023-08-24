@@ -4,6 +4,7 @@ import './App.css'
 import { NavBar } from './components/core/Navbar'
 import { Page } from './types/page'
 import Footer from './components/core/Footer'
+import Bubble from './components/Sorting/Bubble';
 
 
 
@@ -32,7 +33,7 @@ function App() {
                         </Grid>
                         <Grid alignItems="flex-start" item xs={4}>
                             <h1>Participantes</h1>
-                            <text>Kleidson (Progamacaoo e Pesquisa)</text><br />
+                            <text>Kleidson (Progamacao e Pesquisa)</text><br />
                             <text>Matheus (Pesquisa)</text><br />
                             <text>Luis (Design)</text><br />
                         </Grid>
@@ -42,7 +43,8 @@ function App() {
             )}
             { page === 'bubble' && (
                 <>
-                    <div>bubble</div>
+
+                    <Bubble arraySize={arraySize} />
                     <Footer />
 
                 </>
