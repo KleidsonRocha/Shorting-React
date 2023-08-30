@@ -4,3 +4,4 @@ git branch -M main
 git remote add origin https://github.com/KleidsonRocha/Shorting-React.git
 git push -u origin main
 ma o carai
+teste
