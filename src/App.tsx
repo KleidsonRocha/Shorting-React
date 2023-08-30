@@ -5,6 +5,7 @@ import { NavBar } from './components/core/Navbar'
 import { Page } from './types/page'
 import Footer from './components/core/Footer'
 import Bubble from './components/Sorting/Bubble';
+import Shell from './components/Sorting/Shell'
 
 
 
@@ -51,7 +52,7 @@ function App() {
             )}
             { page === 'shell' && (
                  <>
-                 <div>Shell</div>
+                 <Shell arraySize={arraySize} />
                  <Footer />
 
              </>

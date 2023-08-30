@@ -8,21 +8,34 @@
 
 .bar {
     width: 20em;
-    background-color: blue;
     margin: 0 5px;
     display: flex;
     justify-content: center;
     position: relative;
+    background-color: blue; /* Cor padrão */
+}
+
+.sorting {
+    background-color: red; /* Cor da barra sendo ordenada */
+}
+
+.comparing {
+    background-color: yellow; /* Cor da barra sendo comparada */
+}
+
+.swapping {
+    background-color: green; /* Cor da barra sendo trocada */
 }
 
 .bar-number {
     color: white;
     position: absolute;
-    bottom: 2px; /* Ajuste a posição vertical conforme necessário */
-    width: 100%; /* Ocupar a largura da barra */
-    text-align: center;
+    bottom: 2px;
 }
 
-.bar.sorting {
-    background-color: #002884; /* Cor de destaque para a barra sendo ordenada */
+.bar-alinning {
+    display: flex;
+    justify-content: center;
+    margin: 3em;
+    
 }
