@@ -1,1 +1,0 @@
-export type Page = 'home' | 'bubble' | 'shell'
