@@ -1,7 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { Button, Menu, MenuItem } from '@mui/material';
+import { Button, Grid, Menu, MenuItem } from '@mui/material';
 import './Bubble.css'; // Importando o arquivo CSS;
 
+/*
+quando escrevi esse codigo só eu e deus sabia 
+agora só deus sabe
+boa sorte
+*/
 
 interface BubbleProps {
     arraySize: number;
@@ -10,6 +15,11 @@ interface BubbleProps {
 function Bubble(props: BubbleProps) {
     const { arraySize } = props;
     const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+
+    const generateRandomArray = () => {
+        const newArray = Array.from({ length: arraySize }, () => getRandomNumber(10, 100));
+        setRandomArray(newArray);
+    };
 
     const getRandomNumber = (min: number, max: number) => {
         return Math.floor(Math.random() * (max - min) + min);
@@ -74,6 +84,7 @@ function Bubble(props: BubbleProps) {
                 ))}
             </div>
             <div className="bar-alinning">
+             <Button onClick={generateRandomArray} variant="contained">Aleatorizar</Button>
              <Button onClick={handleSortClick} variant="contained">Ordenar</Button>
                 <div>
                     <Button
@@ -94,10 +105,34 @@ function Bubble(props: BubbleProps) {
                         <MenuItem onClick={() => handleSpeedChange(300)}>Médio</MenuItem>
                         <MenuItem onClick={() => handleSpeedChange(200)}>Rápido</MenuItem>
                     </Menu>
-                </div>
-
-            
+                </div>       
             </div>
+                <Grid container spacing={4} padding={2}>
+                        <Grid item xs={8} >
+                            <h1>Sobre o Metodo</h1>
+                            <text>
+                            Segundo Oliveira(2002) o método de ordenação bubble sort utiliza de uma estratégia de “comparação e troca”, podendo ser aplicada em vários vetores
+                            a serem ordenados. Sendo o tipo mais antigo e simples usado para ordenações, o Bubble Sort funciona comparando cada um dos itens da lista com o item
+                            ao lado dele, efetuando a troca se o valor da posição que está sendo analisada for maior que o da posição ao lado. Esse algoritmo repete o processo 
+                            até passar por todas as posições da lista, fazendo com que os valores maiores “flutuem” para o final da lista, enquanto os menores “afundem” para o 
+                            ínicio.<br/>
+                            </text>
+                            <br/>
+                            <text>
+                            O método Bubble Sort possui o pior caso medido por O(n²), onde n é o número de elementos do vetor. Essa equação representa que o tempo de execução do 
+                            algoritmo cresce de maneira proporcional ao quadrado do número de elementos  do vetor. Algoritmos que possuem a complexidade “O(n²) são considerados 
+                            ineficientes para vetores muito grandes, pois o tempo de execução é elevado rapidamente à medida que o tamanho do vetor cresce, tornando-o um algoritmo 
+                            pouco prático para situações em que eficiência é necessária.<br/>
+                            </text>
+                        </Grid>
+                        <Grid alignItems="flex-start" item xs={4}>
+                            <h1>Pior caso Possivel</h1>
+                            <text>complexidade pior caso: O(n^{2})</text><br/>
+                            <text>complexidade caso médio: O(n^{2})</text><br/>
+                            <text>complexidade melhor caso: O(n)</text><br/>
+                            <text>complexidade de espaços pior caso: O(1)</text><br/>
+                        </Grid>
+                    </Grid>
         </div>
     );
 }

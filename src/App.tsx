@@ -27,16 +27,33 @@ function App() {
 
             { page === 'home' && (
                 <>
-                    <Grid container spacing={2}>
-                        <Grid item xs={8}>
-                            <h1>Escolha do Assunto</h1>
-                            <text>kleidson</text>
+                    <Grid container spacing={4}>
+                        <Grid item xs={8} >
+                            <h1>Escolha do Assunto</h1>                            
+                            <text>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In rutrum, neque at ornare mattis, nunc nisl scelerisque sapien, id mollis augue odio 
+                                et elit. Cras tempus erat in consectetur feugiat. Donec tellus orci, tincidunt eu elit ac, aliquet iaculis enim. Proin venenatis ante ac neque 
+                                vestibulum finibus. Praesent a sapien ornare, tempus lacus eget, feugiat leo. Nulla sit amet feugiat dui, lacinia condimentum tellus. Nunc justo 
+                                enim, viverra a semper blandit, auctor quis dolor. Vivamus quis dignissim nibh. Maecenas congue purus a mauris tincidunt tempus. Mauris ultricies, 
+                                nulla ac ultricies ultrices, risus augue elementum augue, ut venenatis eros justo at est. Nullam sit amet malesuada ligula, at vestibulum arcu. 
+                                Etiam viverra sem lacus, ut semper orci tincidunt ac. Pellentesque facilisis metus elit, id lobortis libero lacinia ut.<br/>
+
+                            </text>
+                            <br/>
+                            <text>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. In rutrum, neque at ornare mattis, nunc nisl scelerisque sapien, id mollis augue odio 
+                                et elit. Cras tempus erat in consectetur feugiat. Donec tellus orci, tincidunt eu elit ac, aliquet iaculis enim. Proin venenatis ante ac neque 
+                                vestibulum finibus. Praesent a sapien ornare, tempus lacus eget, feugiat leo. Nulla sit amet feugiat dui, lacinia condimentum tellus. Nunc justo 
+                                enim, viverra a semper blandit, auctor quis dolor. Vivamus quis dignissim nibh. Maecenas congue purus a mauris tincidunt tempus. Mauris ultricies, 
+                                nulla ac ultricies ultrices, risus augue elementum augue, ut venenatis eros justo at est. Nullam sit amet malesuada ligula, at vestibulum arcu. 
+                                Etiam viverra sem lacus, ut semper orci tincidunt ac. Pellentesque facilisis metus elit, id lobortis libero lacinia ut.
+                                
+                            </text>
                         </Grid>
                         <Grid alignItems="flex-start" item xs={4}>
                             <h1>Participantes</h1>
-                            <text>Kleidson (Progamacao e Pesquisa)</text><br />
-                            <text>Matheus (Pesquisa)</text><br />
-                            <text>Luis (Design)</text><br />
+                            <text>Kleidson (Progamacao do Site)</text><br />
+                            <text>Matheus (Pesquisa Bubble)</text><br />
+                            <text>Luis (Pesquisa Shell)</text><br />
                         </Grid>
                     </Grid>
                     <Footer />
