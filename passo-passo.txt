@@ -5,3 +5,7 @@ git remote add origin https://github.com/KleidsonRocha/Shorting-React.git
 git push -u origin main
 ma o carai
 teste
+
+git add .
+git commit -m "djasdjas"
+git push

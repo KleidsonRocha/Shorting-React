@@ -34,7 +34,7 @@ function App() {
                         </Grid>
                         <Grid alignItems="flex-start" item xs={4}>
                             <h1>Participantes</h1>
-                            <text>Kleidson (Progamacao e Pesquisa)</text><br />
+                            <text>Kleidson (Progamacao e Pesquisa pikaaa)</text><br />
                             <text>Matheus (Pesquisa)</text><br />
                             <text>Luis (Design)</text><br />
                         </Grid>
