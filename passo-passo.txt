@@ -9,3 +9,6 @@ teste
 git add .
 git commit -m "djasdjas"
 git push
+
+
+usar o gitlens
