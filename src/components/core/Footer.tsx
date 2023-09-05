@@ -16,18 +16,18 @@ export default function Footer() {
       }}
     >
       <Container maxWidth="lg">
-        <Grid container spacing={5}>
-          <Grid item xs={18} sm={8}>
+        <Grid container spacing={13} padding={2}>
+          <Grid item xs={5} sm={8} >
             <Typography variant="h6" color="text.primary" gutterBottom>
               Sobre Nós
             </Typography>
-            <Typography variant="body2" color="dark" justifyContent={"center"}>
+            <Typography  variant="body2" color="dark" justifyContent={"center"}>
             sou um programador front-end apaixonado por React, especializado em criar experiências de usuário excepcionais. Minhas habilidades combinam a maestria técnica
             do React com uma profunda compreensão da estética do design. Através da aplicação de metodologias ágeis, garanto que cada projeto evolua de maneira eficiente,
             enquanto iterações frequentes e feedback constante moldam cada linha de código que escrevo.
             </Typography>
           </Grid>
-          <Grid item xs={18} sm={4}>
+          <Grid item xs={0} sm={0}>
             <Typography variant="h6" color="text.primary" gutterBottom>
               Contatos
             </Typography>
@@ -43,7 +43,7 @@ export default function Footer() {
           </Grid>
           
         </Grid>
-        <Box mt={5}>
+        <Box mt={2}>
           <Typography variant="body2" color="text.secondary" align="center">
             {"Copyright © "}
              Kleidson Matos da Rocha 
