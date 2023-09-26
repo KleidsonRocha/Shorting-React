@@ -4,6 +4,7 @@
     display: flex;
     align-items: flex-end;
     height: 200px;
+    
 }
 
 .bar {
@@ -12,7 +13,9 @@
     display: flex;
     justify-content: center;
     position: relative;
-    background-color: blue; /* Cor padrão */
+    background-color: #1976d2;
+    border-radius: 5px 5px 0 0;
+    font-weight: 550; /* Cor padrão */
 }
 
 .sorting {
@@ -28,7 +31,6 @@
 }
 
 .bar-number {
-    color: white;
     position: absolute;
     bottom: 2px;
 }
@@ -37,6 +39,6 @@
     display: flex;
     justify-content: center;
     margin: 3em;
-    gap: 2px
+    gap: 1em;
     
 }

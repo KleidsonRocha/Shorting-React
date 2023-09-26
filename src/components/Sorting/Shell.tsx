@@ -10,7 +10,8 @@ interface ShellSortProps {
 function Shell(props: ShellSortProps) {
     const { arraySize } = props;
     const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
-    
+    const [executionTime, setExecutionTime] = useState<number | null>(null);
+
     const generateRandomArray = () => {
         const newArray = Array.from({ length: arraySize }, () => getRandomNumber(10, 100));
         setRandomArray(newArray);
@@ -33,6 +34,7 @@ function Shell(props: ShellSortProps) {
 
     const shellSort = async (arr: number[], delay: number) => {
 
+        const start = performance.now();
         const n = arr.length;
         let gap = Math.floor(n / 2);
 
@@ -55,6 +57,9 @@ function Shell(props: ShellSortProps) {
 
             gap = Math.floor(gap / 2);
         }
+        const end = performance.now(); // Marca o tempo de fim
+        const executionTime = end - start; // Calcula o tempo de execução em milissegundos
+        setExecutionTime(executionTime); // Define o tempo de execução no estado
     };
 
     const sleep = (ms: number) => {

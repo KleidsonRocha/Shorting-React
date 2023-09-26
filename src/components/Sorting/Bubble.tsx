@@ -12,31 +12,35 @@ interface BubbleProps {
     arraySize: number;
 }
 
+
 function Bubble(props: BubbleProps) {
     const { arraySize } = props;
     const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
-
+    const [executionTime, setExecutionTime] = useState<number | null>(null);
+    
     const generateRandomArray = () => {
         const newArray = Array.from({ length: arraySize }, () => getRandomNumber(10, 100));
         setRandomArray(newArray);
     };
-
+    
     const getRandomNumber = (min: number, max: number) => {
         return Math.floor(Math.random() * (max - min) + min);
     };
-
+    
     const [randomArray, setRandomArray] = useState<number[]>(() => {
         return Array.from({ length: arraySize }, () => getRandomNumber(10, 100));
     });
-
+    
     const [animationSpeed, setAnimationSpeed] = useState<number>(100);
     const [sortingIndex, setSortingIndex] = useState<number | null>(null);
-
+    
     useEffect(() => {
         setRandomArray(Array.from({ length: arraySize }, () => getRandomNumber(10, 100)));
     }, [arraySize]);
-
+    
     const bubbleSort = async (arr: number[], delay: number) => {
+        const start = performance.now(); // Marca o tempo de início
+    
         for (let i = 0; i < arr.length - 1; i++) {
             for (let j = 0; j < arr.length - i - 1; j++) {
                 setSortingIndex(j);
@@ -47,7 +51,12 @@ function Bubble(props: BubbleProps) {
                 }
             }
         }
+        
         setSortingIndex(null);
+    
+        const end = performance.now(); // Marca o tempo de fim
+        const executionTime = end - start; // Calcula o tempo de execução em milissegundos
+        setExecutionTime(executionTime); // Define o tempo de execução no estado
     };
 
     const swap = (arr: number[], i: number, j: number) => {
@@ -71,7 +80,14 @@ function Bubble(props: BubbleProps) {
 
     return (
         <div >
-            <h2>Array gerado com tamanho {arraySize}:</h2>
+            <Grid container spacing={4} padding={2}>
+                <Grid item xs={8} >
+                    <h2>Array gerado com tamanho {arraySize}:</h2>
+                </Grid>
+                <Grid alignItems="flex-start" item xs={4}>
+                    <h2>Tempo Levado na Ultima Ordenação: {executionTime ? (executionTime / 1000).toFixed(2) + ' segundos' : 'Aguardando execução'}</h2>
+                </Grid>
+            </Grid>
             <div className="bar-container">
                 {randomArray.map((value, index) => (
                     <div
@@ -79,7 +95,7 @@ function Bubble(props: BubbleProps) {
                         className={`bar ${index === sortingIndex ? 'sorting' : ''}`}
                         style={{ height: `${value}px` }}
                     >
-                        <span className="bar-number">{value}</span>
+                        <span className="bar-number ">{value}</span>
                     </div>
                 ))}
             </div>
