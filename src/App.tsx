@@ -8,11 +8,7 @@ import Bubble from './components/Sorting/Bubble';
 import Shell from './components/Sorting/Shell'
 
 
-/*
-quando escrevi esse codigo só eu e deus sabia 
-agora só Deus sabe
-boa sorte
-*/
+
 
 function App() {
     const [arraySize, setArraySize] = useState<number>(10)
