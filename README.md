@@ -4,14 +4,15 @@ Em cada link vai ter um gui de como baixar oque voce vai precisar para rodar o s
 
 https://nodejs.org/en/download
 
-https://www.npmjs.com/package/download
-
-
 ## Scripts Aceitos
 
 Nesse projeto voce vai usar
 
-Para começar o projeto em modo de deste
+Use primeiro
+
+ `npm install`
+
+Para instalar as dependencias do projeto
 
  `npm start`
 
