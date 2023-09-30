@@ -7,6 +7,8 @@ https://nodejs.org/en/download
 
 ### `npm install`
 
+Para usar as dependencias do projeto
+
 ### `npm start`
 
 Abre [http://localhost:3000](http://localhost:3000) Abre nesse 
