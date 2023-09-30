@@ -1,6 +1,6 @@
 # Baixar dependencias
 
-Node - https://nodejs.org/en/download
+Node  nodejs.org/en/download
 
 
 ## Instalar dependencias
