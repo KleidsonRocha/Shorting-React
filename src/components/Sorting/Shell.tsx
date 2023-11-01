@@ -13,11 +13,13 @@ function Shell(props: ShellSortProps) {
     const [executionTime, setExecutionTime] = useState<number | null>(null);
 
     const generateRandomArray = () => {
+        //gera um array aleátorio apartir do tamanho passado pela objeto pai
         const newArray = Array.from({ length: arraySize }, () => getRandomNumber(10, 100));
         setRandomArray(newArray);
     };
 
     const getRandomNumber = (min: number, max: number) => {
+        // aleatoriza o array
         return Math.floor(Math.random() * (max - min) + min);
     };
 
@@ -34,9 +36,9 @@ function Shell(props: ShellSortProps) {
 
     const shellSort = async (arr: number[], delay: number) => {
 
-        const start = performance.now();
+        const start = performance.now(); //Marca o tempo de inicio
         const n = arr.length;
-        let gap = Math.floor(n / 2);
+        let gap = Math.floor(n / 2); //Divide o array em 2
 
         while (gap > 0) {
             for (let i = gap; i < n; i++) {
