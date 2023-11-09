@@ -67,15 +67,6 @@ function App() {
                             <br/>
                         </Grid>
                     </Grid>
-                    <Grid className='conteudo'>
-                            <h1>Percepções Gerais</h1>                            
-                                <i>
-                                   Colocar as ideias gerais e desenvovklimento do projeto - e linkar com as outras páginas. "Para saber mais sobre "
-                                </i>
-                                <br/>
-                            <br/>
-                            <br/>
-                    </Grid>
                     <Footer />
                 </>
             )}
