@@ -2,7 +2,8 @@
     display: flex;
     align-items: flex-end;
     height: 200px;
-
+    padding-left: 1em;
+    padding-right: 1em;
 }
 
 .bar {
@@ -13,19 +14,15 @@
     position: relative;
     background-color: #1976d2;
     border-radius: 5px 5px 0 0;
-    font-weight: 550; /* Cor padrão */
-}
-
-.sorting {
-    background-color: red; /* Cor da barra sendo ordenada */
+    font-weight: 550; 
 }
 
 .comparing {
-    background-color: yellow; /* Cor da barra sendo comparada */
+    background-color: yellow; 
 }
 
 .swapping {
-    background-color: green; /* Cor da barra sendo trocada */
+    background-color: green; 
 }
 
 .bar-number {

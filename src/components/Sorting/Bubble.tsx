@@ -16,7 +16,7 @@ interface BubbleProps {
 function Bubble(props: BubbleProps) {
     const { arraySize } = props;
     const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
-    const [executionTime, setExecutionTime] = useState<number | null>(null);
+    const [executionTime, setExecutionTime] = useState<string>('Aguardando execução');
 
     const generateRandomArray = () => {
         const newArray = Array.from({ length: arraySize }, () => getRandomNumber(10, 100));
@@ -39,8 +39,10 @@ function Bubble(props: BubbleProps) {
     }, [arraySize]);
 
     const bubbleSort = async (arr: number[], delay: number) => {
-        const start = performance.now(); // Marca o tempo de início
 
+        setExecutionTime('...')
+        const start = performance.now() / 1000; // Marca o tempo de início
+        
         for (let i = 0; i < arr.length - 1; i++) {
             for (let j = 0; j < arr.length - i - 1; j++) {
                 setSortingIndex(j);
@@ -54,9 +56,9 @@ function Bubble(props: BubbleProps) {
 
         setSortingIndex(null);
 
-        const end = performance.now(); // Marca o tempo de fim
-        const executionTime = end - start; // Calcula o tempo de execução em milissegundos
-        setExecutionTime(executionTime); // Define o tempo de execução no estado
+        const end = performance.now() / 1000; // Marca o tempo de fim
+        const executionTime: number = end - start; // Calcula o tempo de execução em milissegundos
+        setExecutionTime(`${executionTime.toFixed(2)} segundos`); // Define o tempo de execução no estado
     };
 
     const swap = (arr: number[], i: number, j: number) => {
@@ -85,7 +87,7 @@ function Bubble(props: BubbleProps) {
                     <h2>Array gerado com tamanho {arraySize}:</h2>
                 </Grid>
                 <Grid alignItems="flex-start" item xs={4}>
-                    <h2>Tempo de Ordenação: {executionTime ? (executionTime / 1000).toFixed(2) + ' segundos' : 'Aguardando execução'}</h2>
+                    <h2>Tempo de Ordenação: {executionTime}</h2>
                 </Grid>
             </Grid>
             <div className="bar-container">
@@ -100,14 +102,15 @@ function Bubble(props: BubbleProps) {
                 ))}
             </div>
             <div className="bar-alinning">
-             <Button onClick={generateRandomArray} variant="contained">Aleatorizar</Button>
-             <Button onClick={handleSortClick} variant="contained">Ordenar</Button>
+             <Button disabled={executionTime === '...'} onClick={generateRandomArray} variant="contained">Aleatorizar</Button>
+             <Button disabled={executionTime === '...'} onClick={handleSortClick} variant="contained">Ordenar</Button>
                 <div>
                     <Button
                         aria-controls="speed-menu"
                         aria-haspopup="true"
                         onClick={(event) => setAnchorEl(event.currentTarget)}
                         variant="contained"
+                        disabled={executionTime === '...'}
                     >
                         Velocidade
                     </Button>
@@ -117,9 +120,9 @@ function Bubble(props: BubbleProps) {
                         open={Boolean(anchorEl)}
                         onClose={() => setAnchorEl(null)}
                     >
-                        <MenuItem onClick={() => handleSpeedChange(400)}>Lento</MenuItem>
-                        <MenuItem onClick={() => handleSpeedChange(300)}>Médio</MenuItem>
-                        <MenuItem onClick={() => handleSpeedChange(200)}>Rápido</MenuItem>
+                        <MenuItem disabled={executionTime === '...'} onClick={() => handleSpeedChange(400)}>Lento</MenuItem>
+                        <MenuItem disabled={executionTime === '...'} onClick={() => handleSpeedChange(300)}>Médio</MenuItem>
+                        <MenuItem disabled={executionTime === '...'} onClick={() => handleSpeedChange(200)}>Rápido</MenuItem>
                     </Menu>
                 </div>       
             </div>
@@ -142,11 +145,11 @@ function Bubble(props: BubbleProps) {
                             </text>
                         </Grid>
                         <Grid alignItems="flex-start" item xs={4}>
-                            <h1>Píor Caso Possível</h1>
-                            <text>complexidade pior caso: O(n^{2})</text><br/>
-                            <text>complexidade caso médio: O(n^{2})</text><br/>
-                            <text>complexidade melhor caso: O(n)</text><br/>
-                            <text>complexidade de espaços pior caso: O(1)</text><br/>
+                            <h1>Pior Caso Possível</h1>
+                            <text>Complexidade pior caso: O(n^{2})</text><br/>
+                            <text>Complexidade caso médio: O(n^{2})</text><br/>
+                            <text>Complexidade melhor caso: O(n)</text><br/>
+                            <text>Complexidade de espaços pior caso: O(1)</text><br/>
                         </Grid>
                     </Grid>
 
