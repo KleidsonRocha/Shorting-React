@@ -1,12 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Button, Grid, Menu, MenuItem } from '@mui/material';
-import './Bubble.css'; // Importando o arquivo CSS;
-
-/*
-quando escrevi esse codigo só eu e deus sabia 
-agora só deus sabe
-boa sorte
-*/
+import './Style.css';
 
 interface BubbleProps {
     arraySize: number;

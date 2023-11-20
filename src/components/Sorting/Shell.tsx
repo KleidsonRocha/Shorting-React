@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './Bubble.css'; // Importando o arquivo CSS
+import './Style.css';
 import { Button, Grid, Menu, MenuItem } from '@mui/material';
 
 interface ShellSortProps {
@@ -38,11 +38,11 @@ function Shell(props: ShellSortProps) {
 
         setExecutionTime('...')
         const start = performance.now() / 1000; //Marca o tempo de inicio
-        const n = arr.length;
-        let gap = Math.floor(n / 2); //Divide o array em 2
+        const arraySize = arr.length;
+        let gap = Math.floor(arraySize / 2); //Divide o array em 2
 
         while (gap > 0) {
-            for (let i = gap; i < n; i++) {
+            for (let i = gap; i < arraySize; i++) {
                 const temp = arr[i];
                 let j = i;
 
