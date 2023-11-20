@@ -17,14 +17,17 @@ Certifique-se de ter o Node.js e o npm instalados em sua máquina.
 
 2. Vá para o diretorio instalado:
 
+      ```bash
     cd seu-visualizador-de-ordenacao
 
 3. Instale as dependências:
-
+   
+   ```bash
     npm install
 
 3. Executando o Aplicativo:
 
+   ```bash
     npm start
 
 
