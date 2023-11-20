@@ -12,6 +12,7 @@ function Bubble(props: BubbleProps) {
     const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
     const [executionTime, setExecutionTime] = useState<string>('Aguardando execução');
     const [swappingIndices, setSwappingIndices] = useState<number[]>([]);
+    const [animationSpeed, setAnimationSpeed] = useState<number>(100);
 
     const generateRandomArray = () => {
         const newArray = Array.from({ length: arraySize }, () => getRandomNumber(10, 100));
@@ -26,8 +27,6 @@ function Bubble(props: BubbleProps) {
         return Array.from({ length: arraySize }, () => getRandomNumber(10, 100));
     });
 
-    const [animationSpeed, setAnimationSpeed] = useState<number>(100);
-    const [sortingIndex, setSortingIndex] = useState<number | null>(null);
 
     useEffect(() => {
         setRandomArray(Array.from({ length: arraySize }, () => getRandomNumber(10, 100)));
@@ -52,7 +51,7 @@ function Bubble(props: BubbleProps) {
         const end = performance.now() / 1000; // Marca o tempo de fim
         const executionTime: number = end - start; // Calcula o tempo de execução em milissegundos
         setExecutionTime(`${executionTime.toFixed(2)} segundos`); // Define o tempo de execução no estado
-    };
+    };  
     
 
     const swap = (arr: number[], i: number, j: number) => {

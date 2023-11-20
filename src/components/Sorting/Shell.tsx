@@ -11,6 +11,8 @@ function Shell(props: ShellSortProps) {
     const { arraySize } = props;
     const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
     const [executionTime, setExecutionTime] = useState<string>('Aguardando execução');
+    const [animationSpeed, setAnimationSpeed] = useState<number>(100);
+    const [sortingIndices, setSortingIndices] = useState<number[]>([]);
 
     const generateRandomArray = () => {
         //gera um array aleátorio apartir do tamanho passado pela objeto pai
@@ -27,9 +29,7 @@ function Shell(props: ShellSortProps) {
         return Array.from({ length: arraySize }, () => getRandomNumber(10, 100));
     });
 
-    const [animationSpeed, setAnimationSpeed] = useState<number>(100);
-    const [sortingIndices, setSortingIndices] = useState<number[]>([]);
-
+   
     useEffect(() => {
         setRandomArray(Array.from({ length: arraySize }, () => getRandomNumber(10, 100)));
     }, [arraySize]);
