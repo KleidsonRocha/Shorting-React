@@ -15,13 +15,11 @@ function Shell(props: ShellSortProps) {
     const [sortingIndices, setSortingIndices] = useState<number[]>([]);
 
     const generateRandomArray = () => {
-        //gera um array aleátorio apartir do tamanho passado pela objeto pai
         const newArray = Array.from({ length: arraySize }, () => getRandomNumber(10, 100));
         setRandomArray(newArray);
     };
 
     const getRandomNumber = (min: number, max: number) => {
-        // aleatoriza o array
         return Math.floor(Math.random() * (max - min) + min);
     };
 
