@@ -92,7 +92,7 @@ function Shell(props: ShellSortProps) {
                 {randomArray.map((value, index) => (
                     <div
                         key={index}
-                        className={`bar ${sortingIndices.includes(index) ? 'sorting' : ''} ${index === sortingIndices[0] ? 'comparing' : ''} ${index === sortingIndices[1] ? 'swapping' : ''}`}
+                        className={`bar ${index === sortingIndices[0] ? 'comparing' : ''} ${index === sortingIndices[1] ? 'comparing' : ''}`}
                         style={{ height: `${value}px` }}
                     >
                         <span className="bar-number">{value}</span>

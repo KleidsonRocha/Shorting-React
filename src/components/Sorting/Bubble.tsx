@@ -11,6 +11,7 @@ function Bubble(props: BubbleProps) {
     const { arraySize } = props;
     const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
     const [executionTime, setExecutionTime] = useState<string>('Aguardando execução');
+    const [swappingIndices, setSwappingIndices] = useState<number[]>([]);
 
     const generateRandomArray = () => {
         const newArray = Array.from({ length: arraySize }, () => getRandomNumber(10, 100));
@@ -33,27 +34,26 @@ function Bubble(props: BubbleProps) {
     }, [arraySize]);
 
     const bubbleSort = async (arr: number[], delay: number) => {
-
-        setExecutionTime('...')
+        setExecutionTime('...');
         const start = performance.now() / 1000; // Marca o tempo de início
-        
+
         for (let i = 0; i < arr.length - 1; i++) {
             for (let j = 0; j < arr.length - i - 1; j++) {
-                setSortingIndex(j);
+                setSwappingIndices([j, j + 1]);
                 await sleep(delay);
                 if (arr[j] > arr[j + 1]) {
                     swap(arr, j, j + 1);
                     setRandomArray([...arr]);
                 }
+                setSwappingIndices([]);
             }
         }
-
-        setSortingIndex(null);
 
         const end = performance.now() / 1000; // Marca o tempo de fim
         const executionTime: number = end - start; // Calcula o tempo de execução em milissegundos
         setExecutionTime(`${executionTime.toFixed(2)} segundos`); // Define o tempo de execução no estado
     };
+    
 
     const swap = (arr: number[], i: number, j: number) => {
         const temp = arr[i];
@@ -88,10 +88,10 @@ function Bubble(props: BubbleProps) {
                 {randomArray.map((value, index) => (
                     <div
                         key={index}
-                        className={`bar ${index === sortingIndex ? 'sorting' : ''}`}
+                        className={`bar ${swappingIndices.includes(index) ? 'comparing' : ''}`}
                         style={{ height: `${value}px` }}
                     >
-                        <span className="bar-number ">{value}</span>
+                        <span className="bar-number">{value}</span>
                     </div>
                 ))}
             </div>

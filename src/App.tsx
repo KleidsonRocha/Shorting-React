@@ -9,7 +9,6 @@ import Shell from './components/Sorting/Shell'
 
 
 
-
 function App() {
     const [arraySize, setArraySize] = useState<number>(10)
     const [page, setPage] = useState<Page>('home')
