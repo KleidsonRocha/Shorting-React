@@ -14,7 +14,7 @@ function App() {
     const [page, setPage] = useState<Page>('home')
 
     useEffect(() => {
-        console.log('array size mudou ', arraySize)
+        console.log('array size mudou ', arraySize);
     }, [arraySize])
 
     return (
